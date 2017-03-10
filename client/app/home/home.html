@@ -1,0 +1,25 @@
+
+<style>
+#well{
+
+border-color: red;
+
+}
+</style>
+<h2> Stories</h2>
+ <div ng-controller="myct" ng-init="getusr()" >
+    <input type="text" ng-model="search" placeholder="Search">
+     <div dir-paginate="story in stories|filter:search|itemsPerPage:3"  >
+       <h3>Title:-{{story.title}}<h4></br>
+       <h4>category</h4><p>{{story.category}}</p></br>
+<div id="well" class="well well-lg">{{story.content}}</div>
+        <!-- <td><button class="btn btn-danger btn-small" ng-click="deleteStory(story._id,$index)">Delete</button>
+             <button type="button" class="btn btn-primary" ng-click="editStory(story._id)">Edit</button>
+        </td> -->
+</div>
+<dir-pagination-controls
+    max-size="5"
+    direction-links="true"
+    boundary-links="true" >
+  </dir-pagination-controls>
+</div>
